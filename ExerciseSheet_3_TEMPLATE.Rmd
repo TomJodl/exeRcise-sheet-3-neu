@@ -119,11 +119,44 @@ Link: <https://opendata.muenchen.de/dataset/vornamen-von-neugeborenen>
 Download the data for both years and track it in git. For small
     datasets like these adding them to git is not a problem.
 
-b)  Load the data for both years into R. Check the type of the count
+### b)
+
+Load the data for both years into R. Check the type of the count
     variable ("Anzahl") and look into the data to determine why it is
     not numeric? Fix the problem in an appropriate manner, it is OK if
     some of the counts are inaccurate because of this. Explain your
     solution and the repercussions.
+
+#### Loading the data   
+
+```{r}
+# Load data for 2021
+data_2021 <- read.csv("vornamen_2021.csv")
+
+# Load data for 2022
+data_2022 <- read.csv("open_data_portal_2022.csv")
+```
+
+#### Check the Variable
+
+```{r echo=FALSE}
+str(data_2021$Anzahl)
+
+str(data_2022$Anzahl)
+```
+
+#### Making "Anzahl" Numeric
+
+```{r}
+# Fix the "Anzahl" variable in 2021 data
+data_2021$Anzahl <- as.numeric(gsub("[^0-9]", "", data_2021$Anzahl))
+
+# Fix the "Anzahl" variable in 2022 data
+data_2022$Anzahl <- as.numeric(gsub("[^0-9]", "", data_2022$Anzahl))
+
+```
+
+After fixing the "Anzahl" variable, be aware that some counts may become inaccurate due to the removal of non-numeric characters. Missing values or non-numeric entries will be converted to NA.
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?
