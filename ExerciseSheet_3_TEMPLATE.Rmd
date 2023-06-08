@@ -78,10 +78,12 @@ Learning Curve
 
 Larger Datasets
     
-e)  Knit this exercise sheet. Some new files will automatically be
+### e)
+
+Knit this exercise sheet. Some new files will automatically be
     generated when knitting the sheet e.g. the HTML page. Ignore these
     files, as we only want to track the source files themselves.
-
+    
 ## Exercise 2: Putting your Repository on GitHub (3.5 Points)
 
 For this task you will upload your solution to GitHub.
