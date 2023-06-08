@@ -114,7 +114,9 @@ open data repository of the city of Munich for the years `2022` and
 
 Link: <https://opendata.muenchen.de/dataset/vornamen-von-neugeborenen>
 
-a)  Download the data for both years and track it in git. For small
+### a)
+
+Download the data for both years and track it in git. For small
     datasets like these adding them to git is not a problem.
 
 b)  Load the data for both years into R. Check the type of the count
