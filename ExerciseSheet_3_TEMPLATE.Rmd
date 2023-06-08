@@ -286,11 +286,36 @@ After executing the corrected code, column_means will contain the column-wise me
 
 Please note that in the corrected code, sapply() is used instead of lapply() to calculate the column-wise means. Additionally, rowMeans() is used to calculate the row-wise means.
 
-b)  Using ChatGPT try to understand what the rapply() function does.
+### b)
+
+Using ChatGPT try to understand what the rapply() function does.
     Create an easy example with mock data where the function is used and
     explain it in your words.
+    
+#### Data:
 
-## Final Note
+```{r}
+directory <- list(
+  file1 = "file1.txt",
+  subdirectory1 = list(
+    file2 = "file2neu.txt",
+    file3 = "file3.txt"
+  ),
+  subdirectory2 = list(
+    file4 = "file4.txt"
+  )
+)
+```
 
-Make sure to push all your commits and changes to GitHub before
-submittining the exercise sheet.
+```{r}
+char_count <- rapply(directory, function(x) nchar(x), how = "list")
+```
+
+```{r}
+char_count$file1
+
+char_count$subdirectory1$file2
+```
+
+rapply() is similar to the lapply() function. It applies a specified function to each element of a list, and if any of the elements are themselves lists, it recursively applies the function to those nested lists as well. rapply() looks through all the nested structures before it gives out a result. It can also simplefy resulst by making them a vector, matrix or array. Or like in the example into a list. 
+In summary the lapply function can be used when the desired result is a list and the rapply fuction can be used when the desired result is a result.
