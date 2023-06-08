@@ -186,8 +186,18 @@ if (total_babies_2022 > total_babies_2021) {
 bigger_baby_boom
 ```
 
-d)  Add a new column `year` to both datasets which holds the correct
+### d)
+
+Add a new column `year` to both datasets which holds the correct
     year for each.
+    
+```{r}
+# Add the 'year' column to the 2021 dataset
+data_2021$year <- 2021
+
+# Add the 'year' column to the 2022 dataset
+data_2022$year <- 2022
+```
 
 e)  Combine both datasets into one using `bind_rows()`.
 
