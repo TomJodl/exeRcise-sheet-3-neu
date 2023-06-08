@@ -230,22 +230,61 @@ kable(top_10_names, caption = "Top 10 Most Popular Names")
 For this task: Specifically use ChatGPT to solve the task and submit
 your prompts in addition to the solution
 
-a)  The code below does not work because the wrong apply function has
+### a)  
+
+The code below does not work because the wrong apply function has
     been used. Find out which apply function would be correct and why it
     did not work. Correct the code. Also calculate the rowwise means.
 
-###Create a sample data frame
+#### Create a sample data frame
 
 tax_data \<- data.frame( Name = c("Munich GmbH", "ABC Inc.", "Backpacks
 1980", "Bavarian Circus"), Tax_2019 = c(5000, 4000, 6000, 3500),
 Tax_2020 = c(4800, 4200, 5800, 3700), Tax_2021 = c(5200, 3800, 5900,
 3400) )
 
-###Calculate column-wise means
+#### Calculate column-wise means
 
-column_means \<- lapply(tax_data\[, -1\], 2, mean)
+column_means \<- lapply(tax_data\ [,-1\], 2, mean)
 
 column_means
+
+#### Prompt:
+
+Task
+
+#### Solution:
+
+The code provided is attempting to calculate the column-wise means of the numeric columns in the tax_data data frame using the lapply() function. However, the second argument of lapply() is incorrect and should be replaced with the correct apply function.
+
+The correct apply function to use in this case is sapply() because it simplifies the output into a vector or matrix, which is suitable for calculating column-wise means.
+
+Here's the corrected code to calculate the column-wise means and row-wise means:
+
+```{r}
+# Create a sample data frame
+tax_data <- data.frame(
+  Name = c("Munich GmbH", "ABC Inc.", "Backpacks 1980", "Bavarian Circus"),
+  Tax_2019 = c(5000, 4000, 6000, 3500),
+  Tax_2020 = c(4800, 4200, 5800, 3700),
+  Tax_2021 = c(5200, 3800, 5900, 3400)
+)
+
+# Calculate column-wise means
+column_means <- sapply(tax_data[, -1], mean)
+
+# Calculate row-wise means
+row_means <- rowMeans(tax_data[, -1])
+
+# Print the column-wise means
+column_means
+# Print the row-wise means
+row_means
+```
+
+After executing the corrected code, column_means will contain the column-wise means for the numeric columns (Tax_2019, Tax_2020, Tax_2021), and row_means will contain the row-wise means for each row of the numeric columns.
+
+Please note that in the corrected code, sapply() is used instead of lapply() to calculate the column-wise means. Additionally, rowMeans() is used to calculate the row-wise means.
 
 b)  Using ChatGPT try to understand what the rapply() function does.
     Create an easy example with mock data where the function is used and
