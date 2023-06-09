@@ -94,7 +94,7 @@ For this task you will upload your solution to GitHub.
 Create a new repository on GitHub in your account named
     `exeRcise-sheet-3`. Make sure you create a **public repository** so
     we are able to see it for grading. Add the link to the repository
-    below:[github](https://github.com/TomJodl/exeRcise-sheet-3.git)
+    below:[github](https://github.com/TomJodl/exeRcise-sheet-3-neu)
     
 ### b)
 
